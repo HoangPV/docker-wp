@@ -1,0 +1,28 @@
+DB_NAME='dev_wp'
+DB_USER='root'
+DB_PASSWORD='12345'
+
+# Optionally, you can use a data source name (DSN)
+# When using a DSN, you can remove the DB_NAME, DB_USER, DB_PASSWORD, and DB_HOST variables
+# DATABASE_URL='mysql://database_user:database_password@database_host:database_port/database_name'
+
+# Optional database variables
+DB_HOST='db'
+# DB_PREFIX='wp_'
+
+WP_ENV='development'
+WP_HOME='https://localhost'
+WP_SITEURL="${WP_HOME}/wp"
+
+# Specify optional debug.log path
+WP_DEBUG_LOG='/var/www/html/debug.log'
+
+# Generate your keys here: https://roots.io/salts.html
+AUTH_KEY='bUBsWHgpod^<_/%{-5c8bAkQCj^Do62`lE3|lMdki=F).nD}bJE5#9MES4wVA=w7'
+SECURE_AUTH_KEY='KzF$$;I2g}h%^E_+Y&v>k,XK^2n^-S$|>+M0kZR&PCo=<W[&p5&WWxA$[$Bf)fEo'
+LOGGED_IN_KEY='HX2#x/oj_y4y+Y?/+EF?Ut&7Yf?X,qD4xXO//{g]TdTBZ,(b2o4DL:[Y^Ro:/>P_'
+NONCE_KEY=';c/WKC:N+Q%[J?GF@WN/o*CR^Dsc+]:o&!G3%gUxo?!:zIZOur3>iaukB_}^c%48'
+AUTH_SALT='H)N[uTYn:h*1(X->E2EO945a5q+0(<}b*?[>E+nd.|Rh8%6fhjwoRg!.l(%xsXW<'
+SECURE_AUTH_SALT='*kn6E2{nzR(k5wku.LaqDKNdv5Re0L^9}*Tycd9[}iIxSB60nxD?x+y16F8On1kO'
+LOGGED_IN_SALT='Re6gHqJ6-HCjfZ%1b$6rpOf6efWUKF[!RUoo.z|9xa8QTc6DsU}=R%*UCX8l]k=E'
+NONCE_SALT='aDU1JgE-HvM=HDga8Y]i)rhKNB4nGT7MHd5rH:Rpj@|BYu$cgGVtqqPxrZ{I:kd?'

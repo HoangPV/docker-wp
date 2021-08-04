@@ -1,0 +1,50 @@
+version: "3"
+services:
+  app:
+    build: app
+    ports:
+      - "80:8000"
+      - "443:8443"
+    links:
+      - db
+      - phpfpm
+    volumes: &appvolumes
+      - ~/.composer:/var/www/.composer:cached
+      - appdata:/var/www/html
+      - sockdata:/sock
+      - ssldata:/etc/nginx/certs
+      - ./bedrock-master:/var/www/html/src
+      - ./env_wp:/var/www/html/src/.env
+      - ./themes:/var/www/html/src/web/app/themes
+      - ./plugins:/var/www/html/src/web/app/plugins
+  phpfpm:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    links:
+      - db
+    volumes: *appvolumes
+  git:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - clientdata:/var/www/html
+      - ./apac-wp:/var/www/html/abbott
+  db:
+    image: percona:5.7
+    command: --max_allowed_packet=64M
+    ports:
+      - "3306:3306"
+    env_file: ./env
+    volumes:
+      - dbdata:/var/lib/mysql
+volumes:
+  appdata:
+  clientdata:
+  dbdata:
+  sockdata:
+  ssldata:
+
+
+
